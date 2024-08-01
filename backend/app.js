@@ -23,11 +23,12 @@ app.use(
 
 // الاتصال بقاعدة البيانات
 const dbUrl = process.env.MONGO_URI;
+
 mongoose
   .connect(dbUrl)
   .then(() => {
-    console.log("MongoDB Connected...");
     app.listen(port, () => console.log(`Server started on port ${port}`));
+    console.log("MongoDB Connected...");
   })
   .catch((err) => console.log(err));
 
