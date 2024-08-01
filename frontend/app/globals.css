@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: black;
+  background-color: #f1f1f1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.Content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.Content::-webkit-scrollbar-thumb {
+  background-color: rgb(37, 37, 37);
+  /* border-radius: 10px; */
+}
+.css-t3ipsp-control,
+.css-13cymwt-control {
+  min-height: 32px !important;
+  height: 32px !important;
+  cursor: pointer !important;
+}
+.css-15lsz6c-indicatorContainer,
+.css-1xc3v61-indicatorContainer {
+  padding: 0 5px !important;
+}
