@@ -25,7 +25,9 @@ app.use(
 const dbUrl = process.env.MONGO_URI;
 
 mongoose
-  .connect(dbUrl)
+  .connect(
+    "mongodb+srv://s____38e:S%40eedKhaled2583@learnexpress.rvworkw.mongodb.net/Car-City?retryWrites=true&w=majority"
+  )
   .then(() => {
     app.listen(port, () => console.log(`Server started on port ${port}`));
     console.log("MongoDB Connected...");
