@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Select from "react-select";
 import Image from "next/image";
-// import { assets } from "/frontend/public/assets/assets";
 import "/app/globals.css";
-import { assets } from "@/public/assets/Assets";
+import { assets } from "@/public/assets/assets";
 
 function AllBookings() {
   const [bookings, setBookings] = useState([]);
