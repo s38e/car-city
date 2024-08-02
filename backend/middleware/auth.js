@@ -15,7 +15,10 @@ const auth = async (req, res, next) => {
     }
 
     // التحقق من التوكن
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(
+      token,
+      "c953a6234b885ac085de627206a1897de15bdd77303fb1a9d35c082acb436595"
+    );
 
     // التحقق من التوكن في قاعدة البيانات
     const storedToken = await Token.findOne({
