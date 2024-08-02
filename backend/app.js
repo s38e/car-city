@@ -80,9 +80,13 @@ app.post("/login", async (req, res) => {
     }
 
     // إنشاء التوكن
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { userId: user._id },
+      "c953a6234b885ac085de627206a1897de15bdd77303fb1a9d35c082acb436595",
+      {
+        expiresIn: "1d",
+      }
+    );
 
     // حفظ التوكن في قاعدة البيانات
     const newToken = new Token({ userId: user._id, token });
