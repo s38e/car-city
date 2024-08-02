@@ -13,10 +13,9 @@ function AllBookings() {
   const [updating, setUpdating] = useState(null);
   const [newStatus, setNewStatus] = useState("");
 
+  const apiUrl = "https://car-city-api.vercel.app";
+  // const apiUrl = "http://localhost:5000";
   useEffect(() => {
-    const apiUrl = "https://car-city-api.vercel.app";
-    // const apiUrl = "http://localhost:5000";
-
     const fetchBookings = async () => {
       try {
         const response = await axios.get(`${apiUrl}/bookings`);
