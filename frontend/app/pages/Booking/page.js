@@ -29,12 +29,12 @@ const BookingPage = () => {
         return;
       }
 
-      const apiUrl =
-        process.env.NEXT_PUBLIC_API_URL || "https://carrcity.vercel.app";
+      const apiUrl = "https://car-city-api.vercel.app";
+      // const apiUrl = "http://localhost:5000";
 
       try {
         const response = await axios.post(
-          "https://car-city-api.vercel.app/book",
+          `${apiUrl}/book`,
           {
             startTime,
             carDetails,

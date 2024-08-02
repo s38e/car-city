@@ -13,20 +13,17 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault(); // لمنع إعادة تحميل الصفحة
 
-    const apiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "https://carrcity.vercel.app";
+    const apiUrl = "https://car-city-api.vercel.app";
+    // const apiUrl = "http://localhost:5000";
 
     try {
       // إرسال طلب التسجيل
-      const response = await axios.post(
-        "https://car-city-api.vercel.app/register",
-        {
-          name,
-          email,
-          password,
-          role,
-        }
-      );
+      const response = await axios.post(`${apiUrl}/register`, {
+        name,
+        email,
+        password,
+        role,
+      });
 
       // إذا كان التسجيل ناجحًا
       setSuccess("Registration successful!");

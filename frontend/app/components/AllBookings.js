@@ -14,13 +14,12 @@ function AllBookings() {
   const [newStatus, setNewStatus] = useState("");
 
   useEffect(() => {
+    const apiUrl = "https://car-city-api.vercel.app";
+    // const apiUrl = "http://localhost:5000";
+
     const fetchBookings = async () => {
       try {
-        const apiUrl =
-          process.env.NEXT_PUBLIC_API_URL || "https://carrcity.vercel.app";
-        const response = await axios.get(
-          "https://car-city-api.vercel.app/bookings"
-        );
+        const response = await axios.get(`${apiUrl}/bookings`);
         setBookings(response.data);
       } catch (err) {
         setError("فشل في جلب الحجوزات");
@@ -66,7 +65,7 @@ function AllBookings() {
   // Handle status update
   const handleStatusChange = async (bookingId) => {
     try {
-      await axios.put(`https://car-city-api.vercel.app/bookings/${bookingId}`, {
+      await axios.put(`${apiUrl}/bookings/${bookingId}`, {
         status: newStatus,
       });
       setBookings(
@@ -87,9 +86,7 @@ function AllBookings() {
   // Handle delete booking
   const handleDelete = async (bookingId) => {
     try {
-      await axios.delete(
-        `https://car-city-api.vercel.app/bookings/${bookingId}`
-      );
+      await axios.delete(`${apiUrl}/bookings/${bookingId}`);
       setBookings(bookings.filter((booking) => booking._id !== bookingId));
     } catch (err) {
       setError("فشل في حذف الحجز");

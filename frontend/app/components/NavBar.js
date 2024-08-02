@@ -15,13 +15,13 @@ function NavBar() {
   }
 
   useEffect(() => {
-    const apiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "https://carrcity.vercel.app";
+    const apiUrl = "https://car-city-api.vercel.app";
+    // const apiUrl = "http://localhost:5000";
 
     // تحقق من تواجد التوكن قبل إرسال الطلب باستخدام axios
     if (token) {
       axios
-        .get("https://car-city-api.vercel.app/current-user", {
+        .get(`${apiUrl}/current-user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

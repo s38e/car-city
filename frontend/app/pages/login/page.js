@@ -12,17 +12,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const apiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "https://carrcity.vercel.app";
+    const apiUrl = "https://car-city-api.vercel.app";
+    // const apiUrl = "http://localhost:5000";
 
     try {
-      const response = await axios.post(
-        "https://car-city-api.vercel.app/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${apiUrl}/login`, {
+        email,
+        password,
+      });
 
       if (response && response.data) {
         // احفظ الـ role والتوكن في localStorage
